@@ -5410,7 +5410,7 @@
                       ><span
                         class="jsx-567d269f2113e727 text-base sm:text-lg font-semibold text-white text-center flex-1 min-w-[100px]"
                         >Portfolio</span
-                      ><button
+                      ><button id="portfolioMobileMenuBtn" onclick="togglePortfolioMenu()"
                         class="jsx-567d269f2113e727 h-8 w-8 border border-white/25 text-white rounded-md hover:bg-white/10 transition flex items-center justify-center shrink-0"
                       >
                         <svg
@@ -5427,34 +5427,6 @@
                           ></path>
                         </svg>
                       </button>
-                    </div>
-                    <div class="jsx-567d269f2113e727 flex justify-center">
-                      <div
-                        class="jsx-567d269f2113e727 flex flex-wrap justify-center gap-2 w-full max-w-[220px]"
-                      >
-                        <button
-                          class="jsx-567d269f2113e727 px-3 py-1 text-xs font-semibold border border-gray-300 rounded-md text-white hover:bg-white hover:text-black transition"
-                        >
-                          Save Draft</button
-                        ><a
-                          href="index.html"
-                          class="jsx-567d269f2113e727 px-3 py-1 text-xs font-semibold flex items-center gap-1 border border-gray-300 rounded-md text-white hover:bg-white hover:text-black transition"
-                          >Preview
-                          <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            stroke-width="0"
-                            viewBox="0 0 576 512"
-                            class="text-[10px]"
-                            height="1em"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
-                            ></path></svg
-                        ></a>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -5510,58 +5482,28 @@
                           ></span>
                         </button>
                       </div>
-                      <div
-                        class="jsx-567d269f2113e727 flex border-2 border-gray-300 rounded-md overflow-hidden text-xs text-white font-bold"
-                      >
-                        <button
-                          class="jsx-567d269f2113e727 px-2 py-1 hover:bg-white hover:text-black transition"
-                        >
-                          Save Draft
-                        </button>
-                        <div
-                          class="jsx-567d269f2113e727 w-px border-1 border-gray-300"
-                        ></div>
-                        <a
-                          href="index.html"
-                          class="jsx-567d269f2113e727 px-2 py-1 flex items-center gap-1 hover:bg-white hover:text-black transition"
-                          >Preview
-                          <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            stroke-width="0"
-                            viewBox="0 0 576 512"
-                            class="text-[10px]"
-                            height="1em"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
-                            ></path></svg
-                        ></a>
-                      </div>
                     </div>
                   </div>
                 </div>
-                <div
+                <div id="portfolioMobileMenu"
                   class="jsx-567d269f2113e727 transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0"
                 >
                   <div
                     class="jsx-567d269f2113e727 px-3 pb-3 pt-2 bg-[#06224C] grid grid-cols-2 gap-2"
                   >
-                    <button
+                    <button onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'}); togglePortfolioMenu();"
                       class="jsx-567d269f2113e727 border border-white/25 px-3 py-2 text-xs text-white rounded-md hover:bg-white/10 transition hover:scale-105"
                     >
                       Home</button
-                    ><button
+                    ><button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'}); togglePortfolioMenu();"
                       class="jsx-567d269f2113e727 border border-white/25 px-3 py-2 text-xs text-white rounded-md hover:bg-white/10 transition hover:scale-105"
                     >
                       About Us</button
-                    ><button
+                    ><button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'}); togglePortfolioMenu();"
                       class="jsx-567d269f2113e727 border border-white/25 px-3 py-2 text-xs text-white rounded-md hover:bg-white/10 transition hover:scale-105"
                     >
                       Projects</button
-                    ><button
+                    ><button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); togglePortfolioMenu();"
                       class="jsx-567d269f2113e727 border border-white/25 px-3 py-2 text-xs text-white rounded-md hover:bg-white/10 transition hover:scale-105"
                     >
                       Contact
@@ -7551,5 +7493,19 @@
         </div>
       </footer>
     </main>
+    <script>
+      function togglePortfolioMenu() {
+        const menu = document.getElementById("portfolioMobileMenu");
+        if (menu) {
+          if (menu.classList.contains("max-h-0")) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-40", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-40", "opacity-100");
+          }
+        }
+      }
+    </script>
   </body>
 </html>
