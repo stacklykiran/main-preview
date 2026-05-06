@@ -5340,14 +5340,12 @@
                 ></path>
               </svg>
             </button>
-            <div class="relative">
-              <button>
+            <div class="relative flex items-center h-9">
+              <button class="flex items-center justify-center overflow-hidden rounded-[50%] w-9 h-9 border-2 border-white/20">
                 <img
                   src="../public/profile.webp"
                   alt="profile"
-                  width="36"
-                  height="36"
-                  class="rounded-full border-2 border-white"
+                  class="jsx-567d269f2113e727 w-full h-full object-cover"
                 />
               </button>
             </div>
@@ -5573,8 +5571,8 @@
                             </div>
                             <div
                               style="
-                                width: 165px;
-                                height: 245px;
+                                width: 140px;
+                                height: 200px;
                                 max-width: 100%;
                                 border-radius: 50%;
                                 box-shadow: none;
@@ -5583,7 +5581,7 @@
                               class="jsx-567d269f2113e727 relative overflow-hidden border-4 border-white z-10 transition-all duration-300 mx-auto"
                             >
                               <img
-                                src="../public/port.webp"
+                                src="../public/portfoliologo.webp"
                                 alt="Srinivas Pentakota - UI/UX Designer Portfolio"
                                 class="jsx-567d269f2113e727 w-full h-full object-cover"
                               />
@@ -5633,7 +5631,7 @@
                             class="jsx-567d269f2113e727 relative overflow-hidden border-4 border-white z-20 animate-[float_6s_ease-in-out_infinite] transition-all duration-300"
                           >
                             <img
-                              src="../public/port.webp"
+                              src="../public/portfoliologo.webp"
                               alt="Srinivas Pentakota - UI/UX Designer Portfolio"
                               class="jsx-567d269f2113e727 w-full h-full object-cover"
                             />
@@ -5742,8 +5740,9 @@
                           class="jsx-567d269f2113e727 w-full bg-gray-300 h-[4px] md:h-[6px] overflow-hidden"
                         >
                           <div
-                            style="width: 0%; transition-delay: 0ms"
-                            class="jsx-567d269f2113e727 bg-[#1a3636] h-full transition-all duration-1000 ease-out"
+                            data-target-width="90%"
+                            style="width: 0%; transition-delay: 0ms; background-color: #1a3636;"
+                            class="jsx-567d269f2113e727 h-full transition-all duration-1000 ease-out skill-bar"
                           ></div>
                         </div>
                       </div>
@@ -5763,8 +5762,9 @@
                           class="jsx-567d269f2113e727 w-full bg-gray-300 h-[4px] md:h-[6px] overflow-hidden"
                         >
                           <div
-                            style="width: 0%; transition-delay: 150ms"
-                            class="jsx-567d269f2113e727 bg-[#1a3636] h-full transition-all duration-1000 ease-out"
+                            data-target-width="80%"
+                            style="width: 0%; transition-delay: 150ms; background-color: #e84b72;"
+                            class="jsx-567d269f2113e727 h-full transition-all duration-1000 ease-out skill-bar"
                           ></div>
                         </div>
                       </div>
@@ -5784,8 +5784,9 @@
                           class="jsx-567d269f2113e727 w-full bg-gray-300 h-[4px] md:h-[6px] overflow-hidden"
                         >
                           <div
-                            style="width: 0%; transition-delay: 300ms"
-                            class="jsx-567d269f2113e727 bg-[#1a3636] h-full transition-all duration-1000 ease-out"
+                            data-target-width="85%"
+                            style="width: 0%; transition-delay: 300ms; background-color: #e44d26;"
+                            class="jsx-567d269f2113e727 h-full transition-all duration-1000 ease-out skill-bar"
                           ></div>
                         </div>
                       </div>
@@ -5805,8 +5806,9 @@
                           class="jsx-567d269f2113e727 w-full bg-gray-300 h-[4px] md:h-[6px] overflow-hidden"
                         >
                           <div
-                            style="width: 0%; transition-delay: 450ms"
-                            class="jsx-567d269f2113e727 bg-[#1a3636] h-full transition-all duration-1000 ease-out"
+                            data-target-width="75%"
+                            style="width: 0%; transition-delay: 450ms; background-color: #264de4;"
+                            class="jsx-567d269f2113e727 h-full transition-all duration-1000 ease-out skill-bar"
                           ></div>
                         </div>
                       </div>
@@ -7506,6 +7508,22 @@
           }
         }
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const bar = entry.target;
+              bar.style.width = bar.getAttribute("data-target-width");
+              observer.unobserve(bar);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll(".skill-bar").forEach(bar => {
+          observer.observe(bar);
+        });
+      });
     </script>
   </body>
 </html>

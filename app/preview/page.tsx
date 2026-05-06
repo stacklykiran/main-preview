@@ -88,10 +88,10 @@ export default function Portfolioedit() {
 
 
   const skills = [
-    { name: "Photoshop", value: 90 },
-    { name: "Figma", value: 80 },
-    { name: "HTML", value: 85 },
-    { name: "CSS", value: 75 },
+    { name: "Photoshop", value: 90, color: "#1a3636" },
+    { name: "Figma", value: 80, color: "#e84b72" },
+    { name: "HTML", value: 85, color: "#e44d26" },
+    { name: "CSS", value: 75, color: "#264de4" },
   ];
 
   function toggleCart() {
@@ -234,14 +234,12 @@ export default function Portfolioedit() {
             </button>
 
             {/* PROFILE */}
-            <div className="relative">
-              <button onClick={() => setProfileOpen(!profileOpen)}>
+            <div className="relative flex items-center h-9">
+              <button onClick={() => setProfileOpen(!profileOpen)} className="flex items-center justify-center overflow-hidden rounded-[50%] w-9 h-9 border-2 border-white/20">
                   <img
                   src="/profile.webp"
                   alt="profile"
-                  width={36}
-                  height={36}
-                  className="rounded-full border-2 border-white"
+                  className="w-full h-full object-cover"
                 />
               </button>
 
@@ -467,7 +465,6 @@ export default function Portfolioedit() {
                               <div className="absolute w-[65%] h-[95%] bg-white/70 rounded-[80px] rotate-[-30deg] shadow-md"></div>
                             </div>
 
-                            {/* Profile Image */}
                             <div className="relative overflow-hidden border-4 border-white z-10 transition-all duration-300 mx-auto"
                               style={{
                                 width: `${heroImageProps.width}px`,
@@ -478,7 +475,7 @@ export default function Portfolioedit() {
                                 opacity: heroImageProps.opacity / 100
                               }}>
                               <img
-                                src="/port.webp"
+                                src="/portfoliologo.webp"
                                 alt="Srinivas Pentakota - UI/UX Designer Portfolio"
                                 className="w-full h-full object-cover"
                               />
@@ -544,7 +541,7 @@ export default function Portfolioedit() {
                               boxShadow: heroImageProps.shadow ? '0 10px 25px rgba(0,0,0,0.3)' : 'none',
                               opacity: heroImageProps.opacity / 100
                             }}>
-                            <img src="/port.webp" alt="Srinivas Pentakota - UI/UX Designer Portfolio" className="w-full h-full object-cover" />
+                            <img src="/portfoliologo.webp" alt="Srinivas Pentakota - UI/UX Designer Portfolio" className="w-full h-full object-cover" />
                           </div>
                         </div>
                       </div>
@@ -633,10 +630,11 @@ export default function Portfolioedit() {
 
                           <div className="w-full bg-gray-300 h-[4px] md:h-[6px] overflow-hidden">
                             <div
-                              className="bg-[#1a3636] h-full transition-all duration-1000 ease-out"
+                              className="h-full transition-all duration-1000 ease-out"
                               style={{
                                 width: skillsInView ? `${skill.value}%` : "0%",
                                 transitionDelay: `${index * 150}ms`,
+                                backgroundColor: skill.color
                               }}
                             />
                           </div>
