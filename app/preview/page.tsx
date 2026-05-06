@@ -234,8 +234,8 @@ export default function Portfolioedit() {
             </button>
 
             {/* PROFILE */}
-            <div className="relative flex items-center h-9">
-              <button onClick={() => setProfileOpen(!profileOpen)} className="flex items-center justify-center overflow-hidden rounded-[50%] w-9 h-9 border-2 border-white/20">
+            <div className="relative flex items-center justify-center w-9 h-9">
+              <button onClick={() => setProfileOpen(!profileOpen)} className="flex items-center justify-center overflow-hidden rounded-full w-9 h-9">
                   <img
                   src="/profile.webp"
                   alt="profile"
